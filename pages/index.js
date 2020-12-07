@@ -11,6 +11,14 @@ function Home() {
     }
   }
 
+  function getSomeMath() {
+    const a = {
+      number: 1,
+      math: 'asd',
+    }
+    return a
+  }
+
   const Author = () => (
     <div className={styles.field}>
       <input
@@ -21,28 +29,39 @@ function Home() {
           (text) => handleChange(text)
         }
       />
-      <div className={styles.line}></div>
+      <div className={styles.line} />
     </div>
   )
 
-  const Code = () => (
-    <input
-      maxLength={6}
-      type='text'
-      placeholder="Código"
-      className={styles.code_input}
-    />
+  const Math = () => (
+    <div>
+      <span>
+        Sua Charada:
+      </span>
+      <br />
+      <br />
+      <span>
+        {getSomeMath().math}
+      </span>
+      <br />
+      <span>
+        Responda com a soma das respostas de todas as charadas.
+      </span>
+      <br />
+      <input
+        maxLength={4}
+        type='text'
+        placeholder="Soma"
+        className={styles.code_input}
+      />
+    </div>
   )
   // iksnimel olua
 
   return (
     <>
-      {/* <div className={styles.form_group}>
-        <input className={styles.form_field} type="email" placeholder="Email" />
-        <span className={styles.span}>@effecti.com.br</span>
-      </div> */}
       { someBool ? <Author /> : null}
-      { !someBool ? <Code /> : null}
+      { !someBool ? <Math /> : null}
     </>
   )
 }
