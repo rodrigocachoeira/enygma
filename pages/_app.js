@@ -1,7 +1,16 @@
 import '../global_style.css'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Head>
+        <title>Paulo Leminski</title>
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp
